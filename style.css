@@ -78,13 +78,13 @@ span {
   height: 100px;
   width: 100px;
   border: 5px solid #000;
-  background-color: blue;
+  background-color: rgb(33, 145, 250);
   border-radius: 50%;
   z-index: 3;
 }
 
 .shapeContain {
   width: 100%;
-  margin: 1rem auto;
-  padding: 1rem 0;
+  margin: 0.5rem auto;
+  /* padding: 1rem 0; */
 }
