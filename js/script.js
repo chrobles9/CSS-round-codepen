@@ -33,7 +33,7 @@ function addShape() {
   const geometry = new THREE.TorusGeometry(3, 1.5, 36, 55);
   // Create shape Texture and add
   const ufoTexture = new THREE.TextureLoader().load(
-    "/media/images/texture.jpg"
+    "./media/images/texture.jpg"
   );
   let material = new THREE.MeshStandardMaterial({
     map: ufoTexture,
@@ -44,7 +44,7 @@ function addShape() {
 
   // Add texture to scene background
   const spaceTexture = new THREE.TextureLoader().load(
-    "/media/images/space.jpg"
+    "./media/images/space.jpg"
   );
   scene.background = spaceTexture;
 }
