@@ -1,12 +1,8 @@
-let scene;
-let camera;
-let renderer;
+let scene, camera, renderer;
 let sceneObjects = [];
 
 function init() {
-
   scene = new THREE.Scene();
-  
   camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -14,21 +10,17 @@ function init() {
     1000
   );
   camera.position.z = 13;
-  
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  
   document.body.appendChild(renderer.domElement);
-  
   lighting();
   animate();
   addShape();
 }
 
 function addShape() {
- 
   // Creates shape
   const geometry = new THREE.TorusGeometry(3, 1.5, 36, 55);
   // Create shape Texture and add
@@ -41,7 +33,6 @@ function addShape() {
   let mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
   sceneObjects.push(mesh);
-
   // Add texture to scene background
   const spaceTexture = new THREE.TextureLoader().load(
     "./media/images/space.jpg"
