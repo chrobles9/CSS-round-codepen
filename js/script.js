@@ -18,6 +18,8 @@ function init() {
   lighting();
   animate();
   addShape();
+  onWindowResize();
+  window.addEventListener('resize', onWindowResize, false);
 }
 
 function addShape() {
@@ -57,6 +59,12 @@ function lighting() {
 
   let ambientLight = new THREE.AmbientLight(0x404040, 2);
   scene.add(ambientLight);
+}
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 init();
